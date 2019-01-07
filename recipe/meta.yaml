@@ -1,5 +1,4 @@
-{% set version = '7.3-14' %}
-
+{% set version = '7.3-15' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,16 +7,14 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: class_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/class_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/class/class_{{ version }}.tar.gz
-  sha256: 18b876dbc18bebe6a00890eab7d04ef72b903ba0049d5ce50731406a82426b9c
+  sha256: f6bf33d610c726d58622b6cea78a808c7d6a317d02409d27c17741dfd1c730f4
 
 build:
   merge_build_host: True  # [win]
-  number: 1002
-
+  number: 1000
   rpaths:
     - lib/R/lib/
     - lib/
@@ -31,11 +28,9 @@ requirements:
     - {{posix}}sed               # [win]
     - {{posix}}coreutils         # [win]
     - {{posix}}zip               # [win]
-
   host:
     - r-base
     - r-mass
-
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
@@ -56,9 +51,23 @@ about:
 
 extra:
   recipe-maintainers:
-    - cbrueffer
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - dbast
+    - conda-forge/r
+
+# Package: class
+# Priority: recommended
+# Version: 7.3-15
+# Date: 2019-01-01
+# Depends: R (>= 3.0.0), stats, utils
+# Imports: MASS
+# Authors@R: c(person("Brian", "Ripley", role = c("aut", "cre", "cph"), email = "ripley@stats.ox.ac.uk"), person("William", "Venables", role = "cph"))
+# Description: Various functions for classification, including k-nearest neighbour, Learning Vector Quantization and Self-Organizing Maps.
+# Title: Functions for Classification
+# ByteCompile: yes
+# License: GPL-2 | GPL-3
+# URL: http://www.stats.ox.ac.uk/pub/MASS4/
+# NeedsCompilation: yes
+# Packaged: 2019-01-01 08:04:06 UTC; ripley
+# Author: Brian Ripley [aut, cre, cph], William Venables [cph]
+# Maintainer: Brian Ripley <ripley@stats.ox.ac.uk>
+# Repository: CRAN
+# Date/Publication: 2019-01-01 09:57:46 UTC
