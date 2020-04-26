@@ -1,4 +1,4 @@
-{% set version = "7.3-16" %}
+{% set version = "7.3-17" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/class_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/class/class_{{ version }}.tar.gz
-  sha256: 940e395e39c750fadbe5c61fd123e4c634c41340dcc1852bc0c0444d817cedca
+  sha256: be1f85b6df7556db93f50cb08106aac6620d4b5bb3fee846422863a022461313
 
 build:
   merge_build_host: true  # [win]
@@ -23,17 +23,17 @@ requirements:
   build:
     - {{ compiler('c') }}        # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{posix}}filesystem        # [win]
-    - {{posix}}make
-    - {{posix}}sed               # [win]
-    - {{posix}}coreutils         # [win]
-    - {{posix}}zip               # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}make
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
     - r-mass
   run:
     - r-base
-    - {{native}}gcc-libs         # [win]
+    - {{ native }}gcc-libs         # [win]
     - r-mass
 
 test:
