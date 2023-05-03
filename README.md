@@ -1,11 +1,22 @@
+About r-class-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-class-feedstock/blob/main/LICENSE.txt)
+
 About r-class
-=============
+-------------
 
 Home: http://www.stats.ox.ac.uk/pub/MASS4/
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-class-feedstock/blob/main/LICENSE.txt)
+Summary: Various functions for classification, including k-nearest neighbour, Learning Vector Quantization and Self-Organizing Maps.
+About r-class
+-------------
+
+Home: http://www.stats.ox.ac.uk/pub/MASS4/
+
+Package license: GPL-2.0-or-later
 
 Summary: Various functions for classification, including k-nearest neighbour, Learning Vector Quantization and Self-Organizing Maps.
 
